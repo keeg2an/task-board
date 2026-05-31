@@ -37,6 +37,33 @@ fix: タスク削除時のエラーを修正
 chore: 依存パッケージをアップデート
 ```
 
+## デプロイ先
+
+- **GitHub Pages**: https://keeg2an.github.io/task-board/
+- `master` ブランチへのプッシュで GitHub Actions が自動ビルド・デプロイ
+- ワークフロー定義: `.github/workflows/deploy.yml`
+
+## 技術スタック
+
+| 種別 | 技術 |
+|---|---|
+| UI ライブラリ | React 18 |
+| ビルドツール | Vite 6 |
+| 言語 | JavaScript (JSX) |
+| スタイリング | Plain CSS (CSS Modules 未使用) |
+| 状態管理 | React `useState` / `useEffect` |
+| データ永続化 | `localStorage` |
+| パッケージマネージャ | npm |
+| CI/CD | GitHub Actions |
+
+## コンポーネント命名規約
+
+- コンポーネントファイル名・関数名は **PascalCase** （例: `App`, `TaskItem`）
+- ファイル拡張子は `.jsx`
+- 1ファイル1コンポーネントを基本とする
+- CSSクラス名は **kebab-case** （例: `.task-item`, `.add-button`, `.board-title`）
+- `localStorage` のキーは **kebab-case** の定数で管理（例: `task-board-tasks`）
+
 ## 開発ルール
 
 - 変更前にかならず `git status` で現在の状態を確認する
